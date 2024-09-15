@@ -9,4 +9,3 @@ scrape_configs:
   - job_name: 'spring-boot'
     static_configs:
       - targets: ['172.31.10.0:8000']
-        metric_path: '/actuator/prometheus'
