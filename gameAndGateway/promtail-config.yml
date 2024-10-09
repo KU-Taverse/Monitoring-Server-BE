@@ -9,14 +9,6 @@ clients:
   - url: http://172.31.2.126:3100/loki/api/v1/push
 
 scrape_configs:
-  - job_name: user-server-logs
-    static_configs:
-      - targets:
-          - localhost
-        labels:
-          job: varlogs
-          __path__: /var/log/springboot/*.log
-
   - job_name: apigateway-server-logs
     static_configs:
       - targets:
