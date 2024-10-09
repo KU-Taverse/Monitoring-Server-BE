@@ -15,7 +15,7 @@ scrape_configs:
           - localhost
         labels:
           job: apigateway-server
-          __path__: /mnt/apigateway-logs/*.log
+          __path__: /var/log/apigateway/*.log
 
   - job_name: game-server-logs
     static_configs:
@@ -23,4 +23,4 @@ scrape_configs:
           - localhost
         labels:
           job: game-server
-          __path__: /mnt/game-server-logs/*.log
+          __path__: /var/log/game/*.log
