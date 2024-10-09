@@ -6,9 +6,23 @@ scrape_configs:
     static_configs:
       - targets: ['promtail:9080']  # Promtail의 메트릭을 수집
 
-  - job_name: 'spring-boot'
+  - job_name: 'user-server'
     static_configs:
       - targets: ['172.31.10.0:8000']
         labels:
-          job: 'spring-boot'
+          job: 'user-server'
+    metrics_path: '/actuator/prometheus'
+  
+  - job_name: 'game-server'
+    static_configs:
+      - targets: ['172.31.13.241:8080']
+        labels:
+          job: 'game-server'
+    metrics_path: '/actuator/prometheus'
+
+  - job_name: 'apigateway-server'
+    static_configs:
+      - targets: ['172.31.13.241:9000']
+        labels:
+          job: 'apigateway-server'
     metrics_path: '/actuator/prometheus'
